@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package infrastructure.repositories.country;
 import Domain.interfaces.ICountry;
+import Domain.interfaces.IState;
+import Domain.models.State;
 import infrastructure.database.ConnectionFactory;
+import infrastructure.repositories.country.ICountryRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,16 +16,22 @@ import java.sql.PreparedStatement;
  *
  * @author gustavo
  */
-public class CountryRepository implements ICountryRepository {
-
+public class StateRepository implements IStateRepository {
+    private ICountryRepository countryRepository;
+    public StateRepository(ICountryRepository countryRepository){
+        this.countryRepository = countryRepository;
+    }
     @Override
-    public void register(ICountry country) throws Error {
+    public void register(IState state) throws Error {
         Connection connection = ConnectionFactory.getConnection();
-        String Sql = "INSERT INTO Pais (descricao) VALUES(?)";
+        String Sql = "INSERT INTO Estado (descricao,Pais_idPais) VALUES(?,?)";
         PreparedStatement pstm = null;
+
+        int countryId = this.countryRepository.findIdByDesc(state.country());
         try{
             pstm = connection.prepareStatement(Sql);
-            pstm.setString(1,country.country());
+            pstm.setString(1,state.state());
+            pstm.setInt(2,countryId);
             pstm.executeUpdate();
         }catch(Exception ex){
             ex.printStackTrace();  
@@ -118,15 +126,13 @@ public class CountryRepository implements ICountryRepository {
         }
     }
      */
-
     @Override
-    public int findIdByDesc(String country) {
-      
+    public int findIdByDesc(String description) {
+        // TODO Auto-generated method stub
         return 0;
     }
-
     @Override
-    public ICountry findByDesc(String description) {
+    public IState findByDesc(String description) {
         // TODO Auto-generated method stub
         return null;
     }
