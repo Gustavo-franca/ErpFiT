@@ -1,6 +1,7 @@
 package View.enderecos;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /*
@@ -13,12 +14,12 @@ import javax.swing.JTextField;
  *
  * @author gustavo
  */
-public class TelaDeCadastroDePais extends javax.swing.JFrame {
+public class StateRegisterView extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaDeCadastroDePais
+     * Creates new form TelaDeCadastroDeEstado
      */
-    public TelaDeCadastroDePais() {
+    public StateRegisterView() {
         initComponents();
     }
 
@@ -34,10 +35,12 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
         jPanelTitulo = new javax.swing.JPanel();
         jTitulo = new javax.swing.JLabel();
         jPanelDados = new javax.swing.JPanel();
-        NomeLabel = new javax.swing.JLabel();
-        TextInputNome = new javax.swing.JTextField();
-        TextInputId = new javax.swing.JTextField();
-        IdLabel = new javax.swing.JLabel();
+        JLabelEstado = new javax.swing.JLabel();
+        jLabelPais = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
+        jComboBoxPaises = new javax.swing.JComboBox<>();
+        JLabelEstado1 = new javax.swing.JLabel();
+        jTextFieldId = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
         jButtonNovo = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -55,7 +58,7 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
         jTitulo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jTitulo.setForeground(new java.awt.Color(1, 1, 1));
         jTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTitulo.setText("País");
+        jTitulo.setText("Estado");
         jTitulo.setToolTipText("");
 
         javax.swing.GroupLayout jPanelTituloLayout = new javax.swing.GroupLayout(jPanelTitulo);
@@ -79,25 +82,28 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
 
         jPanelDados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        NomeLabel.setText("Nome");
+        JLabelEstado.setText("Nome do Estado:");
 
-        TextInputNome.setCaretColor(new java.awt.Color(255, 236, 0));
-        TextInputNome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TextInputNome.addActionListener(new java.awt.event.ActionListener() {
+        jLabelPais.setText("Pais");
+
+        jTextFieldNome.setCaretColor(new java.awt.Color(255, 236, 0));
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextInputNomeActionPerformed(evt);
+                jTextFieldNomeActionPerformed(evt);
             }
         });
 
-        TextInputId.setCaretColor(new java.awt.Color(255, 236, 0));
-        TextInputId.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TextInputId.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxPaises.setToolTipText("");
+
+        JLabelEstado1.setText("Id ");
+
+        jTextFieldId.setCaretColor(new java.awt.Color(255, 236, 0));
+        jTextFieldId.setEnabled(false);
+        jTextFieldId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextInputIdActionPerformed(evt);
+                jTextFieldIdActionPerformed(evt);
             }
         });
-
-        IdLabel.setText("ID");
 
         javax.swing.GroupLayout jPanelDadosLayout = new javax.swing.GroupLayout(jPanelDados);
         jPanelDados.setLayout(jPanelDadosLayout);
@@ -106,27 +112,35 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
             .addGroup(jPanelDadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextInputNome, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
-                    .addComponent(TextInputId, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+                    .addComponent(jTextFieldNome)
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NomeLabel)
-                            .addComponent(IdLabel))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(JLabelEstado)
+                            .addComponent(jLabelPais)
+                            .addComponent(jComboBoxPaises, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addComponent(JLabelEstado1)
+                                .addGap(1, 1, 1)
+                                .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 384, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelDadosLayout.setVerticalGroup(
             jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDadosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(IdLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextInputId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NomeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextInputNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelEstado1)
+                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JLabelEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabelPais)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxPaises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelDados, java.awt.BorderLayout.CENTER);
@@ -212,17 +226,17 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonGravarActionPerformed
 
-    private void TextInputNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextInputNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextInputNomeActionPerformed
-
     private void jButtonBUscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBUscarActionPerformed
 
     }//GEN-LAST:event_jButtonBUscarActionPerformed
 
-    private void TextInputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextInputIdActionPerformed
+    private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextInputIdActionPerformed
+    }//GEN-LAST:event_jTextFieldIdActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,46 +255,23 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCadastroDePais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StateRegisterView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCadastroDePais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StateRegisterView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCadastroDePais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StateRegisterView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCadastroDePais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StateRegisterView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaDeCadastroDePais().setVisible(true);
+                new StateRegisterView().setVisible(true);
             }
         });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IdLabel;
-    private javax.swing.JLabel NomeLabel;
-    private javax.swing.JTextField TextInputId;
-    private javax.swing.JTextField TextInputNome;
-    private javax.swing.JButton jButtonBUscar;
-    private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonGravar;
-    private javax.swing.JButton jButtonNovo;
-    private javax.swing.JButton jButtonSAir;
-    private javax.swing.JPanel jPanelBotoes;
-    private javax.swing.JPanel jPanelDados;
-    private javax.swing.JPanel jPanelTitulo;
-    private javax.swing.JLabel jTitulo;
-    // End of variables declaration//GEN-END:variables
-
-    public JTextField getTextInputId() {
-        return TextInputId;
-    }
-
-    public JTextField getTextInputNome() {
-        return TextInputNome;
     }
 
     public JButton getjButtonBuscar() {
@@ -302,7 +293,34 @@ public class TelaDeCadastroDePais extends javax.swing.JFrame {
     public JButton getjButtonSair() {
         return jButtonSAir;
     }
-    
-    
-}
 
+    public JComboBox<String> getjComboBoxPaises() {
+        return jComboBoxPaises;
+    }
+
+    public JTextField getTextInputId() {
+        return jTextFieldId;
+    }
+
+    public JTextField getTextInputNome() {
+        return jTextFieldNome;
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLabelEstado;
+    private javax.swing.JLabel JLabelEstado1;
+    private javax.swing.JButton jButtonBUscar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonGravar;
+    private javax.swing.JButton jButtonNovo;
+    private javax.swing.JButton jButtonSAir;
+    private javax.swing.JComboBox<String> jComboBoxPaises;
+    private javax.swing.JLabel jLabelPais;
+    private javax.swing.JPanel jPanelBotoes;
+    private javax.swing.JPanel jPanelDados;
+    private javax.swing.JPanel jPanelTitulo;
+    private javax.swing.JTextField jTextFieldId;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JLabel jTitulo;
+    // End of variables declaration//GEN-END:variables
+}

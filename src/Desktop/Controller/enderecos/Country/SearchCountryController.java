@@ -6,7 +6,7 @@
 package Desktop.Controller.enderecos.Country;
 
 import Domain.models.address.Country;
-import View.enderecos.SearchCountryView;
+import View.enderecos.CountrySearchView;
 import aplication.useCases.address.CountryUseCase;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,7 +25,7 @@ import javax.swing.text.BadLocationException;
  */
 public class SearchCountryController  implements ActionListener {
     private Integer selectedId;
-    private final SearchCountryView view = new SearchCountryView(null,true);
+    private final CountrySearchView view = new CountrySearchView(null,true);
     private CountryUseCase useCase;
 
     public SearchCountryController(CountryUseCase useCase) {

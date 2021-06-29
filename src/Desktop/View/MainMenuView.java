@@ -386,6 +386,10 @@ public class MainMenuView extends javax.swing.JFrame {
     public void addActionListenerForCountry(ActionListener l ) {
         country.addActionListener(l);
     }
+    public void addActionListenerForState(ActionListener l ) {
+        state.addActionListener(l);
+    }
+    
     
     
 

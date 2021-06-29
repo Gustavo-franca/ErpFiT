@@ -6,8 +6,8 @@
 package Desktop.Controller.enderecos.Country;
 
 import aplication.useCases.address.CountryUseCase;
-import View.enderecos.SearchCountryView;
-import View.enderecos.TelaDeCadastroDePais;
+import View.enderecos.CountrySearchView;
+import View.enderecos.CountryRegisterView;
 import aplication.useCases.address.CountryUseCase;
 
 import java.awt.event.ActionEvent;
@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 public class CountryController implements ActionListener {
     public int id;
     private CountryUseCase useCase;
-    private final TelaDeCadastroDePais view = new TelaDeCadastroDePais();
+    private final CountryRegisterView view = new CountryRegisterView();
 
 
     public CountryController(CountryUseCase useCase ) {
