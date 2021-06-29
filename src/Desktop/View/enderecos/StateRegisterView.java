@@ -38,7 +38,7 @@ public class StateRegisterView extends javax.swing.JFrame {
         JLabelEstado = new javax.swing.JLabel();
         jLabelPais = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
-        jComboBoxPaises = new javax.swing.JComboBox<>();
+        jComboBoxCountries = new javax.swing.JComboBox<>();
         JLabelEstado1 = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
         jPanelBotoes = new javax.swing.JPanel();
@@ -93,7 +93,7 @@ public class StateRegisterView extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxPaises.setToolTipText("");
+        jComboBoxCountries.setToolTipText("");
 
         JLabelEstado1.setText("Id ");
 
@@ -117,7 +117,7 @@ public class StateRegisterView extends javax.swing.JFrame {
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JLabelEstado)
                             .addComponent(jLabelPais)
-                            .addComponent(jComboBoxPaises, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxCountries, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addComponent(JLabelEstado1)
                                 .addGap(1, 1, 1)
@@ -139,7 +139,7 @@ public class StateRegisterView extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabelPais)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxPaises, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBoxCountries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -295,7 +295,7 @@ public class StateRegisterView extends javax.swing.JFrame {
     }
 
     public JComboBox<String> getjComboBoxPaises() {
-        return jComboBoxPaises;
+        return jComboBoxCountries;
     }
 
     public JTextField getTextInputId() {
@@ -314,7 +314,7 @@ public class StateRegisterView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonGravar;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JButton jButtonSAir;
-    private javax.swing.JComboBox<String> jComboBoxPaises;
+    private javax.swing.JComboBox<String> jComboBoxCountries;
     private javax.swing.JLabel jLabelPais;
     private javax.swing.JPanel jPanelBotoes;
     private javax.swing.JPanel jPanelDados;

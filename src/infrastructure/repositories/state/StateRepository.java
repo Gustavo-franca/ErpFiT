@@ -9,18 +9,61 @@ import Domain.interfaces.ICountry;
 import Domain.interfaces.IState;
 import Domain.models.address.State;
 import infrastructure.database.ConnectionFactory;
+import infrastructure.repositories.IRepository;
 import infrastructure.repositories.country.ICountryRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 /**
  *
  * @author gustavo
  */
 
- /*
-public class StateRepository implements IStateRepository {
+
+public class StateRepository implements IRepository<State> {
+
+    @Override
+    public void register(State t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void save(State t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Integer findIdByDesc(String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public State findByDesc(String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<State> findAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<State> searchFor(String search) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public State findById(Integer id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
+}
+        
+   /*
     private ICountryRepository countryRepository;
     public StateRepository(ICountryRepository countryRepository){
         this.countryRepository = countryRepository;

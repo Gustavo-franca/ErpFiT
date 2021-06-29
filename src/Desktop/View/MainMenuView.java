@@ -52,7 +52,7 @@ public class MainMenuView extends javax.swing.JFrame {
         bairro = new javax.swing.JMenuItem();
         cep = new javax.swing.JMenuItem();
         cidade = new javax.swing.JMenuItem();
-        estado = new javax.swing.JMenuItem();
+        state = new javax.swing.JMenuItem();
         country = new javax.swing.JMenuItem();
         movimentacao = new javax.swing.JMenu();
         venda = new javax.swing.JMenuItem();
@@ -180,13 +180,13 @@ public class MainMenuView extends javax.swing.JFrame {
         });
         endereco.add(cidade);
 
-        estado.setText("Estado");
-        estado.addActionListener(new java.awt.event.ActionListener() {
+        state.setText("Estado");
+        state.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estadoActionPerformed(evt);
+                stateActionPerformed(evt);
             }
         });
-        endereco.add(estado);
+        endereco.add(state);
 
         country.setText("País");
         country.addActionListener(new java.awt.event.ActionListener() {
@@ -339,9 +339,9 @@ public class MainMenuView extends javax.swing.JFrame {
    
     }//GEN-LAST:event_cidadeActionPerformed
 
-    private void estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoActionPerformed
+    private void stateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateActionPerformed
       
-    }//GEN-LAST:event_estadoActionPerformed
+    }//GEN-LAST:event_stateActionPerformed
 
     private void countryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countryActionPerformed
      
@@ -411,7 +411,6 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JMenuItem country;
     private javax.swing.JMenu endereco;
     private javax.swing.JMenu enderecoRelatorio;
-    private javax.swing.JMenuItem estado;
     private javax.swing.JMenuItem estadosRelatorio;
     private javax.swing.JMenuItem faturamentoRelatorio;
     private javax.swing.JMenuItem fornecedor;
@@ -434,6 +433,7 @@ public class MainMenuView extends javax.swing.JFrame {
     private javax.swing.JMenuItem receberRelatorio;
     private javax.swing.JMenu relatorios;
     private javax.swing.JMenuItem servico;
+    private javax.swing.JMenuItem state;
     private javax.swing.JMenuItem venda;
     // End of variables declaration//GEN-END:variables
 }

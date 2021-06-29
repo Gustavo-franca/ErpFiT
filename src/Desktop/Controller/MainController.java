@@ -6,6 +6,7 @@
 package Desktop.Controller;
 
 import Desktop.Controller.enderecos.Country.CountryController;
+import Desktop.Controller.enderecos.state.StateController;
 import Desktop.View.MainMenuView;
 import aplication.useCases.UseCases;
 import java.awt.event.ActionEvent;
@@ -33,5 +34,6 @@ public class MainController  implements ActionListener {
         mainMenuView.setVisible(true);
         
         mainMenuView.addActionListenerForCountry((e)->  new CountryController(useCases.getCountryUseCase()));
+        mainMenuView.addActionListenerForState((e)->  new StateController(useCases.getStateUseCase()));
     }
 }
