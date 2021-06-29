@@ -1,11 +1,18 @@
 {
     "java.project.sourcePaths": [
-        "src"
+        "src",
+        "test"
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "dependencies/mysql-connector-java-8.0.13.jar"
-    ]
+    ],
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.test.config": {
+        "name": "myconfig",
+        "workingDirectory": "${workspaceFolder}/test"
+    },
+    "java.test.defaultConfig": "myconfig"
     
 
 }

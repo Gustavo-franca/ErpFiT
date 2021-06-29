@@ -1,5 +1,8 @@
 
-import aplication.useCases.CountryUseCase;
+import Desktop.Controller.MainController;
+import Desktop.View.MainMenuView;
+import aplication.useCases.*;
+import infrastructure.database.ConnectionFactory;
 import infrastructure.repositories.country.CountryRepository;
 
 /*
@@ -17,20 +20,17 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         CountryRepository rp = new CountryRepository();
         boolean success = new CountryUseCase(rp).register("Alemanha");
         System.out.println("O Pais foi registrado? " + success);
-    }
-/* 
-    public static void Main(String[] args) {
-
-        Connection db = ConnectionFactory.getConnection();
-
-
+    }*/
+ 
+    public static void main(String[] args) {
+        UseCases useCases = new UseCases();
+        var main = new MainController(useCases);
+        main.init();
         
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.setVisible(true);
-    } */
+    } 
     
 }

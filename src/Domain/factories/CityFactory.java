@@ -2,7 +2,7 @@ package Domain.factories;
 
 import Domain.interfaces.ICity;
 import Domain.interfaces.IState;
-import Domain.models.City;
+import Domain.models.address.City;
 import Domain.valueObjects.implementation.DefaultDescription;
 
 public class CityFactory {

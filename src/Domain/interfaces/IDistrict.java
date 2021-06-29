@@ -9,6 +9,10 @@ package Domain.interfaces;
  *
  * @author gustavo
  */
-public interface IDistrict extends ICity {
-    public String district();
+public interface IDistrict {
+    public String description();
+    public String city();
+    public String state();
+    public String country();
+    public void description(String newDistrictName);
 }

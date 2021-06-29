@@ -9,7 +9,9 @@ package Domain.interfaces;
  *
  * @author gustavo
  */
-public interface IState extends ICountry {
-    public String state();
+public interface IState{
+    public String description();
+    public String country();
+    public void description(String newStateName);
     
 }

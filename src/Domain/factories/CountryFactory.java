@@ -1,7 +1,6 @@
 package Domain.factories;
 
-import Domain.interfaces.ICountry;
-import Domain.models.Country;
+import Domain.models.address.Country;
 import Domain.valueObjects.implementation.CountryDescription;
 
 public class CountryFactory {
@@ -10,7 +9,7 @@ public class CountryFactory {
         
     }
 
-    public ICountry create(String countryName) throws Error{
+    public Country create(String countryName) throws Error{
         try{
             return new Country(new CountryDescription(countryName));
         }catch(Error err){
@@ -18,4 +17,10 @@ public class CountryFactory {
         }
         
     }
+
+    public Country create(int i, String string) {
+        return new Country(i,new CountryDescription(string));
+    }
+
+
 }

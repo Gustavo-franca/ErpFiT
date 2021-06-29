@@ -18,5 +18,12 @@ public class DefaultDescription implements IDescription {
     public boolean isvalid(String value){
         return value.matches("\\w+");
     }
+    @Override
+    public void setValue(String newDescription) {
+        if(!isvalid(newDescription)){
+            throw new IllegalArgumentException("the description doesn’t follow the pattern");
+        }
+        this.value = newDescription;
+    }
     
 }

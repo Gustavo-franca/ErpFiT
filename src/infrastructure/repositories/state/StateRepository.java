@@ -1,3 +1,5 @@
+package infrastructure.repositories.state;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +7,7 @@
  */
 import Domain.interfaces.ICountry;
 import Domain.interfaces.IState;
-import Domain.models.State;
+import Domain.models.address.State;
 import infrastructure.database.ConnectionFactory;
 import infrastructure.repositories.country.ICountryRepository;
 
@@ -16,6 +18,8 @@ import java.sql.PreparedStatement;
  *
  * @author gustavo
  */
+
+ /*
 public class StateRepository implements IStateRepository {
     private ICountryRepository countryRepository;
     public StateRepository(ICountryRepository countryRepository){
@@ -30,7 +34,7 @@ public class StateRepository implements IStateRepository {
         int countryId = this.countryRepository.findIdByDesc(state.country());
         try{
             pstm = connection.prepareStatement(Sql);
-            pstm.setString(1,state.state());
+            pstm.setString(1,state.description());
             pstm.setInt(2,countryId);
             pstm.executeUpdate();
         }catch(Exception ex){
@@ -39,7 +43,7 @@ public class StateRepository implements IStateRepository {
         }finally{
              ConnectionFactory.closeConnection(connection, pstm);
         }
-    }
+    }*/
 /* 
     @Override
     public List<Pais> retrieve() {
@@ -126,6 +130,8 @@ public class StateRepository implements IStateRepository {
         }
     }
      */
+
+     /*
     @Override
     public int findIdByDesc(String description) {
         // TODO Auto-generated method stub
@@ -136,4 +142,20 @@ public class StateRepository implements IStateRepository {
         // TODO Auto-generated method stub
         return null;
     }
+    @Override
+    public void save(IState t) {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public IState[] findAll() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public IState[] searchFor(String search) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
+*/

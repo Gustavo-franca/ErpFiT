@@ -3,27 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+ 
 package infrastructure.repositories.country;
+import Domain.factories.CountryFactory;
 import Domain.interfaces.ICountry;
+import Domain.models.address.Country;
 import infrastructure.database.ConnectionFactory;
+import infrastructure.repositories.IRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
  * @author gustavo
  */
-public class CountryRepository implements ICountryRepository {
+
+ 
+public class CountryRepository implements IRepository<Country> {
 
     @Override
-    public void register(ICountry country) throws Error {
+    public void register(Country country) throws Error {
         Connection connection = ConnectionFactory.getConnection();
         String Sql = "INSERT INTO Pais (descricao) VALUES(?)";
         PreparedStatement pstm = null;
         try{
             pstm = connection.prepareStatement(Sql);
-            pstm.setString(1,country.country());
+            pstm.setString(1,country.description());
             pstm.executeUpdate();
         }catch(Exception ex){
             ex.printStackTrace();  
@@ -32,9 +43,8 @@ public class CountryRepository implements ICountryRepository {
              ConnectionFactory.closeConnection(connection, pstm);
         }
     }
-/* 
-    @Override
-    public List<Pais> retrieve() {
+ 
+    private List<Country> retrieve() {
         Connection connection = ConnectionFactory.getConnection();
         String Sql = "SELECT idPais,descricao FROM Pais";
         PreparedStatement pstm = null;
@@ -43,11 +53,11 @@ public class CountryRepository implements ICountryRepository {
             pstm = connection.prepareStatement(Sql);
             rs = pstm.executeQuery();
             
-            List<Pais> paises = new ArrayList();
+            List<Country> paises = new ArrayList();
             
             while(rs.next()){
-                Pais pais = new Pais(rs.getInt("idPais"),rs.getString("descricao"));
-                paises.add(pais);
+                var country =  new CountryFactory().create(rs.getInt("idPais"),rs.getString("descricao"));
+                paises.add(country);
             }
             
             ConnectionFactory.closeConnection(connection, pstm, rs);
@@ -57,10 +67,8 @@ public class CountryRepository implements ICountryRepository {
             return null;
         }
         
-    } */
-/* 
-    @Override
-    public Pais retrieve(int id) {
+    } 
+    private Country retrieve(int id) {
            Connection connection = ConnectionFactory.getConnection();
         String Sql = "SELECT idPais,descricao FROM Pais WHERE idPais= ?";
         PreparedStatement pstm = null;
@@ -71,7 +79,7 @@ public class CountryRepository implements ICountryRepository {
             rs = pstm.executeQuery();
             
             while(rs.next()){
-                Pais pais = new Pais(rs.getInt("idPais"),rs.getString("descricao"));
+                Country pais =new CountryFactory().create(rs.getInt("idPais"),rs.getString("descricao"));
                 ConnectionFactory.closeConnection(connection, pstm, rs);
                 return pais;
             }
@@ -85,14 +93,13 @@ public class CountryRepository implements ICountryRepository {
         }
     }
 
-    @Override
-    public void Update(Pais pais) {
+    public void update(Country pais) {
         Connection connection = ConnectionFactory.getConnection();
         String Sql = "UPDATE Pais SET descricao = ? WHERE idPais= ? ";
         PreparedStatement pstm = null;
         try{
             pstm = connection.prepareStatement(Sql);
-            pstm.setString(1,pais.nome());
+            pstm.setString(1,pais.description());
             pstm.setInt(2,pais.id());
             pstm.executeUpdate();
         }catch(Exception ex){
@@ -102,8 +109,9 @@ public class CountryRepository implements ICountryRepository {
         }
     }
 
+    /*
     @Override
-    public void Delete(Pais pais) {
+    public void Delete(Country pais) {
         Connection connection = ConnectionFactory.getConnection();
         String Sql = "DELETE FROM Pais WHERE idPais= ? ";
         PreparedStatement pstm = null;
@@ -116,18 +124,42 @@ public class CountryRepository implements ICountryRepository {
         }finally{
              ConnectionFactory.closeConnection(connection, pstm);
         }
-    }
-     */
+    }*/
 
     @Override
-    public int findIdByDesc(String country) {
-      
-        return 0;
+    public void save(Country t) {
+        update(t);
+        return;
+    }
+
+
+    @Override
+    public List<Country> findAll() {
+       return this.retrieve();
     }
 
     @Override
-    public ICountry findByDesc(String description) {
-        // TODO Auto-generated method stub
-        return null;
+    public List<Country> searchFor(String search) {
+        var countries = retrieve();
+        String pattern = "" + search.trim().toLowerCase() +".+";
+        return countries.stream().filter((c)->c.description().toLowerCase().matches(pattern)).collect(Collectors.toList());
+
     }
+
+    @Override
+    public Country findById(Integer id) {
+        return retrieve(id);
+    }
+
+    @Override
+    public Integer findIdByDesc(String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Country findByDesc(String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }

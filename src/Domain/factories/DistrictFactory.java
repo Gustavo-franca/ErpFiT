@@ -2,7 +2,7 @@ package Domain.factories;
 
 import Domain.interfaces.ICity;
 import Domain.interfaces.IDistrict;
-import Domain.models.District;
+import Domain.models.address.District;
 import Domain.valueObjects.implementation.DefaultDescription;
 public class DistrictFactory {
     public DistrictFactory(){

@@ -10,5 +10,7 @@ package Domain.interfaces;
  * @author gustavo
  */
 public interface ICountry {
-    public String country(); 
+    public String description();
+
+    public void description(String newCountryName); 
 }

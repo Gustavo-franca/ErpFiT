@@ -2,7 +2,7 @@ package Domain.factories;
 
 import Domain.interfaces.IDistrict;
 import Domain.interfaces.IZipCode;
-import Domain.models.ZipCode;
+import Domain.models.address.ZipCode;
 import Domain.valueObjects.implementation.DefaultDescription;
 
 public class ZipCodeFactory {

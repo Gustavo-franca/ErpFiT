@@ -3,7 +3,7 @@ package Domain.factories;
 
 import Domain.interfaces.ICountry;
 import Domain.interfaces.IState;
-import Domain.models.State;
+import Domain.models.address.State;
 import Domain.valueObjects.implementation.DefaultDescription;
 
 public class StateFactory {
